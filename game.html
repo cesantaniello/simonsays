@@ -120,6 +120,7 @@
         }
 
         siguienteNivel(){
+          this.subnivel = 0
           this.iluminarSecuencia()
           this.agregarEventosClick()
         }
@@ -134,6 +135,19 @@
               return 'naranja'
             case 3:
               return 'verde'                            
+          }
+        }
+
+        transformarColorANumero(color){
+          switch (color) {
+            case 'celeste':
+              return 0
+            case 'violeta':
+              return 1
+            case 'naranja':
+              return 2
+            case 'verde':
+              return 3                            
           }
         }
 
@@ -162,7 +176,9 @@
         }
 
         elegirColor(ev){
-          console.log(ev)
+          const nombreColor = ev.target.dataset.color
+          const numeroColor = transformarColorANumero(nombreColor)
+          this.iluminarColor(nombreColor)
         }
 
       }
