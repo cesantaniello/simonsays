@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: #dedede;
+  background: #000000;
   display: flex;
   align-items: center;
   height: 100vh;
@@ -30,36 +30,36 @@ body {
   float: left;
 }
 
-.celeste {
-  background: #22a6b3;
+.green {
+  background: green;
 }
 
-.celeste.light {
-  background: #7ed6df;
+.green.light {
+  background: lightgreen;
 }
 
-.violeta {
-  background: #be2edd;
+.red {
+  background: red;
 }
 
-.violeta.light {
-  background: #e056fd;
+.red.light {
+  background: pink;
 }
 
-.naranja {
-  background: #f0932b;
+.yellow {
+  background: yellow;
 }
 
-.naranja.light {
-  background: #ffbe76;
+.yellow.light {
+  background: lightyellow;
 }
 
-.verde {
-  background: #6ab04c;
+.blue {
+  background: blue;
 }
 
-.verde.light {
-  background: #badc58;
+.blue.light {
+  background: lightseagreen;
 }
 
 .btn-start {

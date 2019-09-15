@@ -1,7 +1,7 @@
-const celeste = document.getElementById('celeste')
-const violeta = document.getElementById('violeta')
-const naranja = document.getElementById('naranja')
-const verde = document.getElementById('verde')
+const green = document.getElementById('green')
+const red = document.getElementById('red')
+const yellow = document.getElementById('yellow')
+const blue = document.getElementById('blue')
 const btnEmpezar = document.getElementById('btnEmpezar')
 const ULTIMO_NIVEL = 10
 
@@ -20,7 +20,7 @@ class Juego {
     btnEmpezar.classList.add('hide')
     this.nivel = 1
     this.colores = {
-      celeste, violeta, naranja, verde
+      green, red, yellow, blue
     }
   }
 
@@ -45,25 +45,25 @@ class Juego {
   transformarNumeroAColor(numero) {
     switch (numero) {
       case 0:
-        return 'celeste'
+        return 'green'
       case 1:
-        return 'violeta'
+        return 'red'
       case 2:
-        return 'naranja'
+        return 'yellow'
       case 3:
-        return 'verde'
+        return 'blue'
     }
   }
 
   transformarColorANumero(color) {
     switch (color) {
-      case 'celeste':
+      case 'green':
         return 0
-      case 'violeta':
+      case 'red':
         return 1
-      case 'naranja':
+      case 'yellow':
         return 2
-      case 'verde':
+      case 'blue':
         return 3
     }
   }
@@ -85,17 +85,17 @@ class Juego {
   }
 
   agregarEventosClick() {
-    this.colores.celeste.addEventListener('click', this.elegirColor)
-    this.colores.verde.addEventListener('click', this.elegirColor)
-    this.colores.violeta.addEventListener('click', this.elegirColor)
-    this.colores.naranja.addEventListener('click', this.elegirColor)
+    this.colores.green.addEventListener('click', this.elegirColor)
+    this.colores.blue.addEventListener('click', this.elegirColor)
+    this.colores.red.addEventListener('click', this.elegirColor)
+    this.colores.yellow.addEventListener('click', this.elegirColor)
   }
 
   eliminarEventosClick() {
-    this.colores.celeste.removeEventListener('click', this.elegirColor)
-    this.colores.verde.removeEventListener('click', this.elegirColor)
-    this.colores.violeta.removeEventListener('click', this.elegirColor)
-    this.colores.naranja.removeEventListener('click', this.elegirColor)
+    this.colores.green.removeEventListener('click', this.elegirColor)
+    this.colores.blue.removeEventListener('click', this.elegirColor)
+    this.colores.red.removeEventListener('click', this.elegirColor)
+    this.colores.yellow.removeEventListener('click', this.elegirColor)
   }
 
   elegirColor(ev) {
@@ -119,12 +119,12 @@ class Juego {
   }
 
   ganoElJuego() {
-    swal('¡Felicidades ganaste!', 'success')
+    swal('You won!')
       .then(this.inicializar)
   }
 
   perdioElJuego() {
-    swal('¡Perdiste!', 'error')
+    swal('You lost!')
       .then(() => {
         this.eliminarEventosClick()
         this.inicializar()
